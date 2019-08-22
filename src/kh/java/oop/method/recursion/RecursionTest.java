@@ -28,6 +28,9 @@ public class RecursionTest {
 	}
 
 	public int test2(int num) {
+		if(num == 1) {
+			return 1;
+		}
 		return num*test2(num-1);
 	}
 }
