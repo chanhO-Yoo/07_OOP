@@ -7,7 +7,7 @@ import java.util.Random;
  * 1. 타입별 기본값
  * 2. 명시된 초기값
  * 3. 초기화 블럭에서 생성된 값
- * 4. 매개변수 생성자를 이용한 초기화
+ * 4. 매개변수 생성자를 이용한 초기화(가장 많이 사용한다)
  *
  */
 public class InitBlockSample {
@@ -18,7 +18,7 @@ public class InitBlockSample {
 	//클래스 변수 선언
 	public static int snum = 99;
 	//static 초기화 블럭
-	{
+	static {
 		System.out.println("초기화 이전 : "+snum);
 		snum=999;
 		System.out.println("초기화 이후 : "+snum);
@@ -34,6 +34,16 @@ public class InitBlockSample {
 		num = rnd.nextInt(1000)+1;
 		
 		System.out.println("초기화 이후 : "+num);
+	}
+	
+	//기본생성자
+	public InitBlockSample() {
+		
+	}
+	
+	//파라미터 생성자
+	public InitBlockSample(int num) {
+		this.num = num;
 	}
 	
 	
